@@ -1,0 +1,214 @@
+/* Reset de estilos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo principal do site */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: rgb(255, 255, 255); /* Branco */
+    color: rgb(0, 0, 0); /* Preto */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Estilos para os menus de navegação */
+.menu {
+    background-color: rgb(0, 86, 179); /* Azul */
+    padding: 10px;
+    text-align: center;
+}
+
+.menu a {
+    color: rgb(255, 255, 255); /* Branco */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos gerais do cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: rgb(0, 86, 179); /* Azul */
+}
+
+/* Formulários */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 0); /* Preto */
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: rgb(0, 86, 179); /* Azul */
+}
+
+button {
+    background-color: rgb(0, 86, 179); /* Azul */
+    color: rgb(255, 255, 255); /* Branco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: rgb(0, 70, 143); /* Azul mais escuro */
+}
+
+/* Estilos para a área de mensagens de sucesso ou erro */
+.success-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.message {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Container geral */
+.container, .form-container, .task-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tabelas ou áreas de gerenciamento de tarefas */
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.task-column {
+    width: 30%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-column h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(0, 86, 179); /* Azul */
+    margin-bottom: 10px;
+}
+
+.task-column div {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 200px;
+}
+
+.task-column div:hover {
+    background-color: #f0f0f0;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: rgb(255, 255, 255); /* Branco */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.popup button {
+    background-color: rgb(0, 86, 179); /* Azul */
+    color: rgb(255, 255, 255); /* Branco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.popup button:hover {
+    background-color: rgb(0, 70, 143); /* Azul mais escuro */
+}
+
+.popup button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .task-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .task-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .menu a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+}

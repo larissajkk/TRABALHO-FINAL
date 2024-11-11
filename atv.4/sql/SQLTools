@@ -1,0 +1,44 @@
+CREATE DATABASE GerenciamentoTarefas;
+USE GerenciamentoTarefas;
+-- Tabela de usuários
+CREATE TABLE Usuario (
+    ID_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Senha VARCHAR(100) NOT NULL,
+    Cargo VARCHAR(50) NOT NULL
+);
+-- Tabela de setores
+CREATE TABLE Setor (
+    ID_Setor INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50) NOT NULL,
+    Descricao TEXT
+);
+-- Tabela de status
+CREATE TABLE Status (
+    ID_Status INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50) NOT NULL,
+    Descricao TEXT
+);
+-- Tabela de prioridade
+CREATE TABLE Prioridade (
+    ID_Prioridade INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50) NOT NULL,
+    Descricao TEXT
+);
+-- Tabela de tarefas
+CREATE TABLE Tarefa (
+    ID_Tarefa INT AUTO_INCREMENT PRIMARY KEY,
+    Titulo VARCHAR(100) NOT NULL,
+    Descricao TEXT,
+    Data_Criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Data_Entrega DATETIME,
+    ID_Setor INT NOT NULL,
+    ID_Usuario INT NOT NULL,
+    ID_Status INT NOT NULL,
+    ID_Prioridade INT NOT NULL,
+    FOREIGN KEY (ID_Setor) REFERENCES Setor(ID_Setor),
+    FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario),
+    FOREIGN KEY (ID_Status) REFERENCES Status(ID_Status),
+    FOREIGN KEY (ID_Prioridade) REFERENCES Prioridade(ID_Prioridade)
+);
